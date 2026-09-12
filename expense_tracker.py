@@ -13,6 +13,23 @@ def main():
 
     specific_category(file_expense)
 
+    clear_expenses(file_expense)
+    
+def clear_expenses(file_expense):
+    choice = input("Do you want to clear previous expenses? (Y/N): ")
+
+    if choice.upper() == "Y":
+        with open(file_expense, "w") as f:
+            pass
+
+        print("Previous expenses cleared.")
+
+    elif choice.upper() == "N":
+        print("Previous expenses kept.")
+
+    else:
+        print("Invalid input.")
+
 
 def get_expense_details():
     expense_name = input("Enter expense name: ")
